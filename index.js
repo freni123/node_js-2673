@@ -16,7 +16,7 @@ var express = require('express');
 var app = express();
 
 app.get('/',(req,res)=> {
-    res.send(200,'Server is Running');
-    console.warn('Server is Running');
+    res.send(200,'Express server is Running');
+    console.warn('Express server is Running');
     res.end()
 }).listen(4500);
