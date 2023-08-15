@@ -1,3 +1,3 @@
-module.exports.user = require("./user");
-module.exports.user = require("./category");
-module.exports.user = require("./product");
+module.exports.User = require("./user");
+module.exports.category = require("./category");
+// module.exports.user = require("./product");
