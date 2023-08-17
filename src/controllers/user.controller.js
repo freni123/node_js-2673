@@ -23,5 +23,21 @@ const createUser = async (req, res) => {
       res.status(400).json({ success: false, message: error.message });
     }
   };
-  module.exports = {createUser}
+  // Get user list
+  const getUserList = async (req,res) =>{
+    try {
+      const getDetails = await userService.getUserList(filter ,options);
+      res.status(200).json({
+        success:true,
+        message:"User details get successfully!",
+        data:getDetails,
+      })
+    } catch (error) {
+      res.status(400);
+    }
+  }
+  module.exports = {
+    createUser,
+    getUserList,
+  }
 
