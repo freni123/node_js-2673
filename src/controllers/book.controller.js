@@ -1,5 +1,7 @@
+const { LEGAL_TLS_SOCKET_OPTIONS } = require("mongodb");
 const {bookService} = require("../services");
-// create book
+const { options } = require("joi");
+// create-book
 const createBook = async(req,res) =>{
     try {
         const reqBody = req.body;
@@ -17,4 +19,21 @@ const createBook = async(req,res) =>{
 
     }
 }
-module.exports = {createBook}
+// Get Book List
+const getBookList = async (req,res) => {
+    try {
+        const getBookDetails = await bookService.getBookList(req,res);
+        res.status(200).json({
+            success:true,
+            message:"Book details get successfully!",
+            data:getBookDetails,
+        })
+    } catch (error) {
+        res.status(400);
+    }
+
+}
+module.exports = {
+        createBook,
+        getBookList
+}

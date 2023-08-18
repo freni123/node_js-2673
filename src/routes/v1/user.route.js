@@ -5,7 +5,7 @@ const { userController} = require('../../controllers');
 
 const router = express.Router();
 
-// create user
+// Create-User
 router.post(
     "/create-user",
     // validate(userValidation.createUser),

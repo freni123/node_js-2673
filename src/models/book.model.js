@@ -2,27 +2,31 @@ const mongoose = require('mongoose');
 
 const bookSchema = new mongoose.Schema(
     {
-       book_title:{
+        book_title:{
         type:String,
         trim:true,
        },
-       author:{
+        book_author:{
         type:String,
         trim:true,
        },
-       publishedYear:{
+        book_desc:{
+        type:String,
+        trim:true,
+       },
+        book_price:{
         type:Number,
         trim:true,
        },
-       pageCount:{
-        type:Number,
-        trim:true,
-       },
+        is_active:{
+        type:Boolean,
+        default:true,
+    }
 },
 {
     timesstamps:true,
     versionKey:false,
 }
 );
-const book = mongoose.model('book',bookSchema);
+const book = mongoose.model('bookstore',bookSchema);
 module.exports=book;

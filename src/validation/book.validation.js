@@ -1,12 +1,21 @@
 const Joi = require("joi");
 
-/** create book */
+/** Create Book */
 const createBook = {
   body: Joi.object().keys({
     book_title: Joi.string().required().trim(),
-    author: Joi.string().required().trim(),
-    publishedYear: Joi.string().required().trim(),
-    pageCount: Joi.string().required().trim(),
+    book_author: Joi.string().required().trim(),
+    book_desc: Joi.string().required().trim(),
+    book_price: Joi.string().required().trim(),
   }),
 };
-module.exports = createBook;
+/** Get Book List */
+const getBookList = {
+  query:Joi.object().keys({
+    serach:Joi.string().trim().allow(""),
+    sortBy: Joi.string().trim().allow(""),
+    limit: Joi.number().integer().allow(""),
+    page: Joi.number().integer().allow(""),
+  })
+}
+module.exports = createBook,getBookList;

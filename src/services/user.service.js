@@ -14,7 +14,7 @@ const createUser = async (reqBody) => {
  * @param {object} options
  * @returns {Promise<User>}
  */
- const getUserList = async(reqBody) => {
+ const getUserList = async(req, res) => {
   return User.find();
 }
   module.exports = {

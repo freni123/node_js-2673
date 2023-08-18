@@ -26,7 +26,7 @@ const createUser = async (req, res) => {
   // Get user list
   const getUserList = async (req,res) =>{
     try {
-      const getDetails = await userService.getUserList(filter ,options);
+      const getDetails = await userService.getUserList(req,res);
       res.status(200).json({
         success:true,
         message:"User details get successfully!",
