@@ -18,4 +18,4 @@ const getBookList = {
     page: Joi.number().integer().allow(""),
   })
 }
-module.exports = createBook,getBookList;
+module.exports = {createBook,getBookList};

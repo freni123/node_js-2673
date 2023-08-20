@@ -1,14 +1,14 @@
 const express = require('express');
-// const { userValidation } = require('../../validations');
+ const { userValidation } = require('../../validation');
 const { userController} = require('../../controllers');
-// const validate  = require('../../middlewares/validate');
+ const validate  = require('../../middlewares/validate');
 
 const router = express.Router();
 
 // Create-User
 router.post(
     "/create-user",
-    // validate(userValidation.createUser),
+    validate(userValidation.createUser),
     userController.createUser
 );
 //GET User List

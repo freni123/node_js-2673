@@ -19,4 +19,4 @@ const getUserList = {
   })
 };
 
-module.exports = createUser,getUserList;
+module.exports = {createUser,getUserList};

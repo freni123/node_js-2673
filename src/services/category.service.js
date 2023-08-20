@@ -1,11 +1,15 @@
 const { category } = require("../models");
 
 /**
- * Create user
+ * Create category
  * @param {object} reqBody
  * @returns {Promise<User>}
  */
 const createCategory = async (reqBody) => {
     return category.create(reqBody);
   };
-  module.exports = {createCategory};
+  // ** get category list*/
+  const getCategoryList = async(req,res) => {
+    return book.find();
+  }
+  module.exports = {createCategory,getCategoryList};

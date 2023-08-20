@@ -11,8 +11,8 @@ const createBook = async(req,res) =>{
         }
         res.status(200).json({
         success: true,
-        message: reqBody,
-        data: { reqBody },
+        message:"Book Details Successfully",
+        data: {book},
       });
     } catch (error) {
               res.status(400).json({ success: false, message: error.message });

@@ -1,7 +1,7 @@
 const { book } = require("../models");
 
 /**
- * Create-user
+ * Create-Book
  * @param {object} reqBody
  * @returns {Promise<User>}
  */
@@ -11,7 +11,7 @@ const createBook = async (reqBody) => {
   module.exports ={
     createBook,
   }
-/** Get User-List*/
+/** Get Book-List*/
 const getBookList = async(req,res) => {
   return book.find();
 }

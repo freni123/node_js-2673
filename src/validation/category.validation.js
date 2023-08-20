@@ -7,4 +7,4 @@ const createCategory = {
     category_desc: Joi.string().required().trim(),
   }),
 };
-module.exports = createCategory;
+module.exports = {createCategory};

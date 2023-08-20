@@ -23,5 +23,18 @@ const createCategory = async (req, res) => {
       res.status(400).json({ success: false, message: error.message });
     }
   };
-  module.exports = {createCategory}
+  //** get category list */
+  const getCategoryList = async (req,res) => {
+    try {
+      const getCategoryDetails = await categoryService.getCategoryList(req,res);
+      res.status(200).json({
+        success:true,
+        message:"Category details get successfully!",
+        data:getCategoryDetails,
+      })
+    } catch (error) {
+      res.status(400);
+    }
+  }
+  module.exports = {createCategory,getCategoryList}
 
